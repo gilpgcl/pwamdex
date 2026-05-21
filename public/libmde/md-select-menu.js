@@ -1,5 +1,5 @@
-import { getAttribute } from "../getAttribute.js"
-import { querySelector } from "../querySelector.js"
+import { getAttribute } from "../libclienteweb/getAttribute.js"
+import { querySelector } from "../libclienteweb/querySelector.js"
 import { MdOptionsMenu } from "./md-options-menu.js"
 
 export class MdSelectMenu extends HTMLElement {

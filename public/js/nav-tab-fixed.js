@@ -1,4 +1,4 @@
-import { resaltaSiEstasEn } from "./lib/resaltaSiEstasEn.js"
+import { resaltaSiEstasEn } from "../libclienteweb/resaltaSiEstasEn.js"
 
 export class NavTabFixed extends HTMLElement {
 

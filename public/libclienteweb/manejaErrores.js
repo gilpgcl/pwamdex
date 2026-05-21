@@ -9,7 +9,7 @@ import { muestraError } from "./muestraError.js"
 
  Response.prototype.json = function () {
   // Llamamos al método original usando el contexto (this) de la respuesta
-  return originalJson.apply(this, arguments)
+  return originalJson.call(this)
    .catch((/** @type {any} */ error) => {
     // Corrige un error de Chrome que evita el manejo correcto de errores.
     throw new Error(error)
@@ -18,13 +18,13 @@ import { muestraError } from "./muestraError.js"
 }
 
 window.onerror = function (
-  /** @type {string} */ _message,
-  /** @type {string} */ _url,
-  /** @type {number} */ _line,
-  /** @type {number} */ _column,
-  /** @type {Error} */ errorObject
+ /** @type {Event | string} */ _event,
+ /** @type {string | undefined} */ _fuente,
+ /** @type {number | undefined} */ _numeroDeLinea,
+ /** @type {number | undefined} */ _numeroDeColumna,
+ /** @type {Error | undefined} */ error
 ) {
- muestraError(errorObject)
+ muestraError(error)
  return true
 }
 

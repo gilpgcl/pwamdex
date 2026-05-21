@@ -1,6 +1,6 @@
-import { ES_APPLE } from "../ES_APPLE.js"
-import { getAttribute } from "../getAttribute.js"
-import { querySelector } from "../querySelector.js"
+import { ES_APPLE } from "../libclienteweb/ES_APPLE.js"
+import { getAttribute } from "../libclienteweb/getAttribute.js"
+import { querySelector } from "../libclienteweb/querySelector.js"
 
 class MdAppBar extends HTMLElement {
 

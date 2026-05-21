@@ -1,6 +1,6 @@
-import { abreElementoHtml } from "../abreElementoHtml.js"
-import { cierraElementoHtmo } from "../cierraElementoHtmo.js"
-import { querySelector } from "../querySelector.js"
+import { abreElementoHtml } from "../libclienteweb/abreElementoHtml.js"
+import { cierraElementoHtmo } from "../libclienteweb/cierraElementoHtmo.js"
+import { querySelector } from "../libclienteweb/querySelector.js"
 
 export class MdOptionsMenu extends HTMLElement {
 

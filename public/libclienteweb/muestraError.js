@@ -2,16 +2,11 @@ import { ProblemDetailsError } from "./ProblemDetailsError.js"
 
 /**
  * Muestra los datos de una Error en la consola y en un cuadro de alerta.
- * @param { ProblemDetailsError | Error | null } error descripción del error.
+ * @param { unknown } error descripción del error.
  */
 export function muestraError(error) {
 
- if (error === null) {
-
-  console.error("Error")
-  alert("Error")
-
- } else if (error instanceof ProblemDetailsError) {
+ if (error instanceof ProblemDetailsError) {
 
   const problemDetails = error.problemDetails
 
@@ -19,7 +14,7 @@ export function muestraError(error) {
    typeof problemDetails["title"] === "string" ? problemDetails["title"] : ""
   if (typeof problemDetails["detail"] === "string") {
    if (mensaje !== "") {
-    mensaje += "\n\n"
+    mensaje += "\n"
    }
    mensaje += problemDetails["detail"]
   }
@@ -29,10 +24,17 @@ export function muestraError(error) {
   console.error(error, problemDetails)
   alert(mensaje)
 
- } else {
+ } else if (
+  typeof error === "object" && error !== null && "message" in error
+ ) {
 
   console.error(error)
   alert(error.message)
+
+ } else {
+
+  console.error("Error", error)
+  alert("Error")
 
  }
 

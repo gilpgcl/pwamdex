@@ -15,7 +15,7 @@
  * conoce como número menor y se cambia cuando se realizan
  * modificaciones menores.
  */
-const VERSION = "1.01"
+const VERSION = "1.0"
 
 /**
  * Nombre de la carpeta de caché.
@@ -28,10 +28,6 @@ const CACHE = "pwamd"
  */
 const ARCHIVOS = [
  "ayuda.html",
- "favicon.ico",
- "index.html",
- "select.html",
- "site.webmanifest",
  "css/baseline.css",
  "css/colors.css",
  "css/elevation.css",
@@ -49,10 +45,11 @@ const ARCHIVOS = [
  "css/roboto.css",
  "css/shape.css",
  "css/state.css",
- "css/transicion_pestanas.css",
- "css/typography.css",
  "css/theme/dark.css",
  "css/theme/light.css",
+ "css/transicion_pestanas.css",
+ "css/typography.css",
+ "favicon.ico",
  "fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints",
  "fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
  "fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2",
@@ -68,21 +65,24 @@ const ARCHIVOS = [
  "img/maskable_icon_x96.png",
  "img/screenshot_horizontal.png",
  "img/screenshot_vertical.png",
+ "index.html",
  "js/nav-tab-fixed.js",
- "js/lib/abreElementoHtml.js",
- "js/lib/cierraElementoHtmo.js",
- "js/lib/ES_APPLE.js",
- "js/lib/getAttribute.js",
- "js/lib/manejaErrores.js",
- "js/lib/muestraError.js",
- "js/lib/muestraTextoDeAyuda.js",
- "js/lib/ProblemDetailsError.js",
- "js/lib/querySelector.js",
- "js/lib/registraServiceWorker.js",
- "js/lib/resaltaSiEstasEn.js",
- "js/lib/custom/md-app-bar.js",
- "js/lib/custom/md-options-menu.js",
- "js/lib/custom/md-select-menu.js",
+ "js/registraServiceWorker.js",
+ "libclienteweb/abreElementoHtml.js",
+ "libclienteweb/cierraElementoHtmo.js",
+ "libclienteweb/ES_APPLE.js",
+ "libclienteweb/getAttribute.js",
+ "libclienteweb/manejaErrores.js",
+ "libclienteweb/muestraError.js",
+ "libclienteweb/muestraTextoDeAyuda.js",
+ "libclienteweb/ProblemDetailsError.js",
+ "libclienteweb/querySelector.js",
+ "libclienteweb/resaltaSiEstasEn.js",
+ "libmde/md-app-bar.js",
+ "libmde/md-options-menu.js",
+ "libmde/md-select-menu.js",
+ "select.html",
+ "site.webmanifest",
  "ungap/custom-elements.js",
  "/"
 ]
