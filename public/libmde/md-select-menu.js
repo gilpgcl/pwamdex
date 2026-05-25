@@ -258,20 +258,18 @@ export class MdSelectMenu extends HTMLElement {
  /** @private */
  _abre() {
   this.classList.add("open")
-  const parentElement = this.parentElement
-  if (parentElement !== null) {
+  const bounds = this.getBoundingClientRect()
    const optionsMenu = this.optionsMenu
    if (optionsMenu !== null) {
-    optionsMenu.style.top = `${parentElement.offsetTop + 58}px`
-    optionsMenu.style.left = `${parentElement.offsetLeft}px`
-    optionsMenu.style.width = `${parentElement.offsetWidth}px`
+    optionsMenu.style.top = `${ bounds.bottom}px`
+    optionsMenu.style.left = `${ bounds.left}px`
+    optionsMenu.style.width = `${ bounds.width}px`
     optionsMenu.abre()
     this.focus()
     optionsMenu.addEventListener("click", this._clicEnDialogo)
    }
    this.ariaExpanded = "true"
    document.addEventListener("click", this.clicExterno)
-  }
  }
 
  /** @private */

@@ -14,25 +14,26 @@
  <link rel="icon" sizes="32x32" href="favicon.ico">
  <link rel="manifest" href="site.webmanifest">
  <link rel="stylesheet" href="css/material-symbols-outlined.css">
- <script src="ungap/custom-elements.js"></script>
+ <link rel="stylesheet" href="material-tokens/css/baseline.css">
+ <link rel="stylesheet" href="css/estilos.css">
+ <script src="ungap/es.js"></script>
 
  <script type="module" src="libmde/md-app-bar.js"></script>
+ <script type="module" src="js/nav-tab-fixed.js"></script>
  <script type="module" src="libmde/md-select-menu.js"></script>
  <script type="module" src="libmde/md-options-menu.js"></script>
- <script type="module" src="js/nav-tab-fixed.js"></script>
 
- <link rel="stylesheet" href="css/estilos.css">
- <link rel="stylesheet" href="css/md-tab.css">
- <link rel="stylesheet" href="css/md-menu.css">
- <link rel="stylesheet" href="css/md-filled-text-field.css">
- <link rel="stylesheet" href="css/md-filled-button.css">
+ <link rel="stylesheet" href="libmde/md-tab.css">
+ <link rel="stylesheet" href="libmde/md-menu.css">
+ <link rel="stylesheet" href="libmde/md-filled-text-field.css">
+ <link rel="stylesheet" href="libmde/md-filled-button.css">
  <link rel="stylesheet" href="css/transicion_pestanas.css">
 
 </head>
 
 <body>
 
- <form>
+ <form id="formulario" novalidate>
 
   <md-app-bar adicional="tab">
 
@@ -50,7 +51,7 @@
       aria-labelledby="etiquetaGrupo"
       options="opcionesDeGrupo"></md-select-menu>
      <span>Grupo *</span>
-     <small>Obligatorio</small>
+     <small id="supportingGrupo">Obligatorio</small>
     </span>
    </p>
 
@@ -68,6 +69,28 @@
   </md-options-menu>
 
  </form>
+ <script type="module">
+
+  import { muestraTextoDeAyuda } from "./libclienteweb/muestraTextoDeAyuda.js"
+
+  formulario.grupo.addEventListener("input", copiaMensajes)
+  formulario.addEventListener("submit", procesa)
+
+  function copiaMensajes() {
+   muestraTextoDeAyuda(formulario.grupo, supportingGrupo, "Obligatorio")
+  }
+
+  /**
+   * @param {SubmitEvent} evt
+   */
+  function procesa(evt) {
+   copiaMensajes()
+   if (!formulario.grupo.validity.valid) {
+    evt.preventDefault()
+   }
+  }
+
+ </script>
 
 </body>
 
